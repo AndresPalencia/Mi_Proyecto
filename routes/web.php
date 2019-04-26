@@ -11,11 +11,11 @@
 |
 */
 
+//Route::get('prueba/{num}', 'pruebaController@prueba');
+
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('prueba/{num}', 'pruebaController@prueba');
 
 Route::resource('trainers','trainerController');
 
