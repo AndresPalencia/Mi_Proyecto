@@ -5,7 +5,7 @@
 	</div>
 	
 	<div class="form-group">
-		{!! Form::label('slug', 'Slug') !!}
+		{!! Form::label('slug', 'Alias') !!}
 		{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 	</div>
 <br>

@@ -38,6 +38,15 @@ class trainerController extends Controller
     public function store(Request $request)
     {
         
+        $validatedData = $request->validate([
+            'name' => 'required|max: 5',
+            'avatar' => 'required|image',
+            'slug' => 'required',
+            'description' => 'required|max: 10'
+        ]);
+
+        $trainer = new Trainer();
+
         if($request->hasFile('avatar')){
             $file = $request->file('avatar');
             $name = time().$file->getClientOriginalName();

@@ -3,6 +3,16 @@
 @section('tittle', 'Trainers Create')
 
 @section('content')
+	
+	@if ($errors->any())
+		<div class="alert alert-danger">
+			<ul align="center">
+				@foreach($errors->all() as $error)
+					<p>{{$error}}</p>	
+				@endforeach
+			</ul>
+		</div>
+	@endif
 
 {!! Form::open(['route' => 'trainers.store', 'method' => 'POST', 'files' => true ]) !!}
 
