@@ -4,6 +4,7 @@ namespace Proyecto\Http\Controllers;
 
 use Proyecto\Trainer;
 use Illuminate\Http\Request;
+use Proyecto\Http\Requests\StoreTrainerRequest;
 
 class trainerController extends Controller
 {
@@ -35,16 +36,8 @@ class trainerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTrainerRequest $request)
     {
-        
-        $validatedData = $request->validate([
-            'name' => 'required|max: 5',
-            'avatar' => 'required|image',
-            'slug' => 'required',
-            'description' => 'required|max: 10'
-        ]);
-
         $trainer = new Trainer();
 
         if($request->hasFile('avatar')){
