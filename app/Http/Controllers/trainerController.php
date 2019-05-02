@@ -53,8 +53,9 @@ class trainerController extends Controller
         $trainers->description = $request->input('description');
         $trainers->save();
 
-        return 'Hecho';
-        //return $request->all();*/
+        return redirect()->route('trainers.index')->with('status', 'Entrenador creado correctamente');
+        //return 'Hecho';
+        //return $request->all();
     }
 
     /**
@@ -97,7 +98,8 @@ class trainerController extends Controller
         }
         $trainer->save();
 
-        return 'Actualizado';
+        return redirect()->route('trainers.show', [$trainer])->with('status', 'Entrenador actualizado correctamente');
+        //return 'Actualizado';
     }
 
     /**
@@ -112,6 +114,7 @@ class trainerController extends Controller
         \File::delete($file_path);
         
         $trainer->delete();
-        return 'Eliminado';
+        return redirect()->route('trainers.index')->with('status', 'Entrenador eliminado correctamente');;
+        //return 'Eliminado';
     }
 }
