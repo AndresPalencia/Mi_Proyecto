@@ -30,3 +30,6 @@ Route::get('/Mi_Primera_Ruta', function () {
     return 'Hola Mundo, Fuck You!';
 });
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
