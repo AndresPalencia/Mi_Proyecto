@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('trainers','trainerController');
+Route::resource('productions', 'productionController');
 
 /*
 Comentario: Esto es solo prueba
