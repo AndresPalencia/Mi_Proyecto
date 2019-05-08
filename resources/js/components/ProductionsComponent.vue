@@ -17,15 +17,11 @@
 	export default {
 		data() {
 			return {
-				productions: [
-					{ id: 1, name: "Productor1"},
-					{ id: 2, name: "Productor2"},
-					{ id: 3, name: "Productor3"},
-				]
+				productions: []
 			}
 		},
 		mounted() {
-            console.log('Component mounted.')
+            axios.get('http://127.0.0.1:8000/productions').then(response => (this.productions = response.data))
 	}
 }	
 </script>

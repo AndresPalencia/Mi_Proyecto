@@ -1814,20 +1814,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      productions: [{
-        id: 1,
-        name: "Productor1"
-      }, {
-        id: 2,
-        name: "Productor2"
-      }, {
-        id: 3,
-        name: "Productor3"
-      }]
+      productions: []
     };
   },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var _this = this;
+
+    axios.get('http://127.0.0.1:8000/productions').then(function (response) {
+      return _this.productions = response.data;
+    });
   }
 });
 
