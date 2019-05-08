@@ -1,5 +1,6 @@
 <template>
-<div class="row">	
+<div class="row">
+	<spinner v-if="loading"></spinner>
 	<div class="col-sm" v-for="production in productions">
 		<div class="card text-center" style="width: 18rem; margin-top: 50px;">
         	<img style="height: 100px; width: 100px; background-color: #EFEFEF; margin: 20px;" class="card-img-top rounded-circle mx-auto d-block" src="images/" alt="">
@@ -17,11 +18,18 @@
 	export default {
 		data() {
 			return {
-				productions: []
+				productions: [],
+				loading: true
+
 			}
 		},
 		mounted() {
-            axios.get('http://127.0.0.1:8000/productions').then(response => (this.productions = response.data))
+            axios
+            	.get('http://127.0.0.1:8000/productions')
+            	.then((response) => { 
+            		this.productions = response.data
+            		this.loading = false
+            	})
 	}
 }	
 </script>
