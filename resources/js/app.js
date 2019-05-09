@@ -22,6 +22,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('productions-component', require('./components/ProductionsComponent.vue').default);
+Vue.component('add-productions-btn', require('./components/AddProductionsComponent.vue').default);
+Vue.component('create-form-productions', require('./components/CreateProductionsComponent.vue').default);
 Vue.component('spinner', require('./components/Spinner.vue').default);
 
 /**
