@@ -26,11 +26,31 @@
 </div>
 </template>
 
-<scrypt>
+<script>
 	export default {
-
-	}
-</scrypt>
+    data(){
+      return {
+        name: null,
+        picture: null
+      }
+    },
+    methods: {
+      saveProduction: function(){
+        axios.post('http://127.0.0.1:8000/productions',{
+          name: this.name,
+          picture: this.picture
+        })
+        .then(function(response){
+          console.log(response)
+          $('#addProduction').modal('hide')
+        })
+        .catch(function(err){
+          console.log(err)
+        });
+      }
+    }
+  }
+</script>
 
 <style>
 

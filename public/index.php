@@ -8,7 +8,9 @@
  */
 
 define('LARAVEL_START', microtime(true));
-
+header('Access-Control-Allow-Origin: *'); 
+header("Access-Control-Allow-Credentials: true");
+ 
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
