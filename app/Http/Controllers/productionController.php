@@ -22,7 +22,8 @@ class productionController extends Controller
             $production->save();
                
                 return response()->json([
-                    "message" => "Produccion Incluida Exitosamente"
+                    "message" => "Produccion Incluida Exitosamente",
+                    "production" => $production
                 ], 200);
         }
     }

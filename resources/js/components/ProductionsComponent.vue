@@ -1,4 +1,5 @@
 <template>
+<!--header('Access-Control-Allow-Origin: *');-->
 <div class="row">
 	<spinner v-show="loading"></spinner>
 	<div class="col-sm" v-for="production in productions">
@@ -15,7 +16,8 @@
 </template>
 
 <script>
-	export default {
+	import EventBus from '../event-bus';
+    export default {
 		data() {
 			return {
 				productions: [],
@@ -23,6 +25,11 @@
 
 			}
 		},
+        created(){
+            EventBus.$on('production-added', data => {
+                this.productions.push(data)
+            })
+        },
 		mounted() {
             axios
             	.get('http://127.0.0.1:8000/productions')

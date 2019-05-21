@@ -27,7 +27,8 @@
 </template>
 
 <script>
-	export default {
+	import EventBus from '../event-bus';
+  export default {
     data(){
       return {
         name: null,
@@ -40,11 +41,11 @@
           name: this.name,
           picture: this.picture
         })
-        .then(function(response){
-          console.log(response)
+        .then(function (response){
           $('#addProduction').modal('hide')
+          EventBus.$emit('production-added', response.data.production)
         })
-        .catch(function(err){
+        .catch(function (err){
           console.log(err)
         });
       }
