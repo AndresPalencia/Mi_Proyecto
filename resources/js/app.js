@@ -20,11 +20,10 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('productions-component', require('./components/ProductionsComponent.vue').default);
-Vue.component('add-productions-btn', require('./components/AddProductionsComponent.vue').default);
-Vue.component('create-form-productions', require('./components/CreateProductionsComponent.vue').default);
-Vue.component('spinner', require('./components/Spinner.vue').default);
+Vue.component('list-of-productions', require('./components/productions/list.vue').default);
+Vue.component('modal-button', require('./components/productions/modal_button.vue').default);
+Vue.component('add-form-productions', require('./components/productions/add.vue').default);
+Vue.component('spinner', require('./components/widgets/spinner.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
