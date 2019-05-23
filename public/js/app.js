@@ -1802,10 +1802,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     saveProduction: function saveProduction() {
-      axios.post('http://127.0.0.1:8000/productions', {
+      var currentRoute = window.location.pathname;
+      axios.post("http://127.0.0.1:8000".concat(currentRoute, "/productions"), {
         name: this.name,
         picture: this.picture
       }).then(function (response) {
+        console.log(response);
         $('#addProduction').modal('hide');
         _event_bus__WEBPACK_IMPORTED_MODULE_0__["default"].$emit('production-added', response.data.production);
       })["catch"](function (err) {
@@ -50731,8 +50733,8 @@ var bus = new Vue();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Chimba\desktop\mi_proyecto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Chimba\desktop\mi_proyecto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Chimba\desktop\Mi_Proyecto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Chimba\desktop\Mi_Proyecto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

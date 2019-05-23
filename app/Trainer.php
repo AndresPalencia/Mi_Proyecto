@@ -18,6 +18,6 @@ class Trainer extends Model
 	}
 
 	public function productions(){
-		return $this->hasMany('Proyecto\Production')
+		return $this->hasMany('Proyecto\Productions');
 	}
 }

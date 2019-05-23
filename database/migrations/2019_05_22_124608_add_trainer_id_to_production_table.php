@@ -14,7 +14,7 @@ class AddTrainerIdToProductionTable extends Migration
     public function up()
     {
         Schema::table('productions', function (Blueprint $table) {
-            $table->integer('trainers_id')->unsigned();
+            $table->integer('trainer_id')->unsigned();
         });
     }
 
@@ -26,7 +26,7 @@ class AddTrainerIdToProductionTable extends Migration
     public function down()
     {
         Schema::table('productions', function (Blueprint $table) {
-            $table->dropColumn('trainers_id');
+            $table->dropColumn('trainer_id');
         });
     }
 }

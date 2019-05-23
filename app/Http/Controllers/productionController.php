@@ -2,6 +2,7 @@
 
 namespace Proyecto\Http\Controllers;
 use Proyecto\Production;
+use Proyecto\Trainer;
 use Illuminate\Http\Request;
 
 class productionController extends Controller
@@ -14,16 +15,18 @@ class productionController extends Controller
     	return view('productions.index');
     }
     
-    public function store(Request $request){
+    public function store(Trainer $trainer, Request $request){
         if($request->ajax()){
             $production = new Production();
             $production->name = $request->input('name');
             $production->picture = $request->input('picture');
-            $production->save();
+            $production->trainer()->associate($trainer)->save();
+           // $production->save();
                
                 return response()->json([
+                    //"trainer" => $trainer,
                     "message" => "Produccion Incluida Exitosamente",
-                    "production" => $production
+                    "production" => $production,
                 ], 200);
         }
     }

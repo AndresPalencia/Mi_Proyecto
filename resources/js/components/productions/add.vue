@@ -37,11 +37,16 @@
     },
     methods: {
       saveProduction: function(){
-        axios.post('http://127.0.0.1:8000/productions',{
+        let currentRoute = window.location.pathname
+
+        axios.post(`http://127.0.0.1:8000${currentRoute}/productions`,{
           name: this.name,
-          picture: this.picture
+          picture: this.picture,
+         
         })
         .then(function (response){
+        
+         console.log(response)
           $('#addProduction').modal('hide')
           EventBus.$emit('production-added', response.data.production)
         })

@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 Route::resource('trainers','trainerController');
-Route::resource('productions', 'productionController');
+//Route::resource('productions', 'productionController');
+Route::post('trainers/{trainer}/productions', 'productionController@store');
 
 /*
 Comentario: Esto es solo prueba

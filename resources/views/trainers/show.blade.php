@@ -18,4 +18,6 @@
   			{!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
   		{!! Form::close() !!}
   	</div>
+    <modal-button></modal-button>
+    <add-form-productions></add-form-productions>
 @endsection
