@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::resource('trainers','trainerController');
 //Route::resource('productions', 'productionController');
+Route::get('trainers/{trainer}/productions', 'productionController@index');
 Route::post('trainers/{trainer}/productions', 'productionController@store');
 
 /*

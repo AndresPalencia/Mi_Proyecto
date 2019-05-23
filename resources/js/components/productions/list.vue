@@ -31,10 +31,12 @@
             })
         },
 		mounted() {
+            let currentRoute = window.location.pathname
             axios
-            	.get('http://127.0.0.1:8000/productions')
+            	.get(`http://127.0.0.1:8000${currentRoute}/productions`)
             	.then((response) => { 
-            		this.productions = response.data
+            		console.log(response)
+                    this.productions = response.data
             		this.loading = false
             	})
 	}

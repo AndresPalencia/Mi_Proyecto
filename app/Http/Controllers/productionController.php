@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class productionController extends Controller
 {
-    public function index(Request $request){
+    public function index(Trainer $trainer, Request $request){
     	if($request->ajax()){
-            $productions = Production::all();
-    		return response()->json($productions, 200);
+    		return response()->json($trainer->production, 200);
     	}
     	return view('productions.index');
     }

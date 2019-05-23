@@ -17,7 +17,7 @@ class Trainer extends Model
     	return 'slug';
 	}
 
-	public function productions(){
-		return $this->hasMany('Proyecto\Productions');
+	public function production(){
+		return $this->hasMany('Proyecto\Production');
 	}
 }

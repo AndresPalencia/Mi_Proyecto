@@ -20,4 +20,5 @@
   	</div>
     <modal-button></modal-button>
     <add-form-productions></add-form-productions>
+    <list-of-productions></list-of-productions>
 @endsection

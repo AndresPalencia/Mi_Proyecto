@@ -1864,7 +1864,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this2 = this;
 
-    axios.get('http://127.0.0.1:8000/productions').then(function (response) {
+    var currentRoute = window.location.pathname;
+    axios.get("http://127.0.0.1:8000".concat(currentRoute, "/productions")).then(function (response) {
+      console.log(response);
       _this2.productions = response.data;
       _this2.loading = false;
     });
@@ -50733,8 +50735,8 @@ var bus = new Vue();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Chimba\desktop\Mi_Proyecto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Chimba\desktop\Mi_Proyecto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Chimba\Desktop\Mi_Proyecto\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Chimba\Desktop\Mi_Proyecto\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
